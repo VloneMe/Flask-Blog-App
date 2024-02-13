@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section class="space-y-7"
+    >
+        {% for post in posts %}
+            <article class=""
+            >
+                <div class="bg-white/35 p-5 border "
+                >
+                    <div class="border-b"
+                    >
+                        <a class="text-blue-500 hover:underline cursor-pointer"
+                        >{{ post.author}}</a>
+
+                        <small class="pl-3 mute"
+                        >
+                            {{ post.date_posted}}
+                        </small>
+                    </div>
+
+                    <h2 class="text-2xl font-bold pt-3"
+                    >
+                        <a>{{ post.title }}</a>
+                    </h2>
+                    <p class="py-3"
+                    >
+                        {{ post.content}}
+                    </p>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock content %}

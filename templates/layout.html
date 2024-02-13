@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+        <title>Flask Blog  - {{title}}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+</head>
+<body class="bg-white/20"
+>
+
+    <Header class="w-full h-[70px] flex items-center bg-black text-white mb-5 sticky" 
+    >
+        <div class="container mx-auto max-w-7xl text-lg"
+        > Header</div>
+    </Header>
+
+    <main role="main"
+          class="w-full min-h-screen max-w-7xl mx-auto"
+    >
+        <div class="flex flex-row w-full container mx-auto gap-10"
+        >
+            <div class="flex-[6]">
+                {% block content %} {% endblock %}
+            </div>
+
+            <div class="flex-[2] border h-fit"
+            >
+                <div class="bg-white px-3 py-10"
+                >
+                    <h1 class="text-2xl font-bold"
+                    > Our sidebar</h1>
+
+                    <p class="py-3"
+                    >
+                        Here you can put anything more or add some additonal options
+                    </p>
+                    <p
+                    >
+                        <ul class="pt-2"
+                        >
+                            <li class="border rounded px-5 py-2"
+                            >Latest post</li>
+                            <li class="border rounded px-5 py-2"
+                            >Announcements</li>
+                            <li class="border rounded px-5 py-2"
+                            >Calenders</li>
+                            <li class="border rounded px-5 py-2"
+                            >etc</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
